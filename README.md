@@ -1,8 +1,8 @@
 # Kata19 Word Chains by Korga Mateusz
 
 How to use it? Run 'WordChains.java', then enter CHECK to check if given words have connection on graph.
->Example run:
-><br/>Type name of option:
+<br/>Example run:
+>Type name of option:
 ><br/>CHECK
 ><br/>EXIT
 ><br/>*check*
