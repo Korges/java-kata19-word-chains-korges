@@ -20,7 +20,7 @@ public class UI {
         do {
             System.out.println("Type source word:");
             words[0] = scanner.nextLine().toLowerCase();
-            System.out.println("Type destination word");
+            System.out.println("Type destination word:");
             words[1] = scanner.nextLine().toLowerCase();
         } while (words[0].length() != words[1].length());
 
