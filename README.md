@@ -14,5 +14,5 @@ How to use it? Run 'WordChains.java', then enter CHECK to check if given words h
 <br/>[dog, dot, dat, cat]
 
 <br/>
-!![Alt text](screenshot.jpg?raw=true "screenshot")
+![Alt text](screenshot.jpg?raw=true "screenshot")
 *screenshot*
