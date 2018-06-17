@@ -1,12 +1,13 @@
 package com.korges.krk.graph;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Word {
 
     private String text;
-    private ArrayList<Word> closeWords;
+    private List<Word> closeWords;
 
     public Word(String text) {
 
@@ -18,7 +19,7 @@ public class Word {
         this.closeWords.add(closeWord);
     }
 
-    public ArrayList<Word> getCloseWords() {
+    public List<Word> getCloseWords() {
         return closeWords;
     }
 
