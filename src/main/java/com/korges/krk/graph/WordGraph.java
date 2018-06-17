@@ -7,7 +7,7 @@ import java.util.*;
 
 public class WordGraph {
 
-    private ArrayList<Word> wordList;
+    private List<Word> wordList;
 
     public WordGraph() {
 
@@ -27,18 +27,18 @@ public class WordGraph {
         throw new WordNotInWordListException(value);
     }
 
-    public LinkedList<Word> breadthFirstSearch(Word source, Word destination) throws ConnectionNotFoundException {
+    public List<Word> breadthFirstSearch(Word source, Word destination) throws ConnectionNotFoundException {
 
         double startTime = System.currentTimeMillis();
 
-        HashMap<Word, Word> previous = new HashMap<>();
-        LinkedList<Word> nextToVisit = new LinkedList<>();
+        Map<Word, Word> previous = new HashMap<>();
+        List<Word> nextToVisit = new LinkedList<>();
 
         nextToVisit.add(source);
 
         while(!nextToVisit.isEmpty()) {
 
-            Word word = nextToVisit.remove();
+            Word word = nextToVisit.remove(0);
 
             if (word == destination) {
                 countSearchTime(startTime);
@@ -55,13 +55,13 @@ public class WordGraph {
         throw new ConnectionNotFoundException();
     }
 
-    private LinkedList<Word> backtrace(HashMap<Word, Word> map, Word source, Word destination) {
+    private List<Word> backtrace(Map<Word, Word> map, Word source, Word destination) {
 
-        LinkedList<Word> list = new LinkedList<>();
+        List<Word> list = new LinkedList<>();
 
         list.add(destination);
-        while(!list.getFirst().equals(source)) {
-            list.addFirst(map.get(list.getFirst()));
+        while(!list.get(0).equals(source)) {
+            list.add(0, map.get(list.get(0)));
         }
         return list;
     }
@@ -81,13 +81,13 @@ public class WordGraph {
 
     private boolean compareWords(String firstWord, String secondWord) {
 
-        int amountOfDiffrentLetters = 0;
+        int amountOfDifferentLetters = 0;
         int wordLength = firstWord.length();
         for (int i = 0; i < wordLength; i++) {
             if (firstWord.charAt(i) != secondWord.charAt(i)) {
-                amountOfDiffrentLetters++;
+                amountOfDifferentLetters++;
             }
-            if(amountOfDiffrentLetters > 1)
+            if(amountOfDifferentLetters > 1)
                 return false;
         }
         return true;
