@@ -1,12 +1,10 @@
 package com.korges.krk.graph;
 
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class WordTest {
 
@@ -21,7 +19,7 @@ class WordTest {
     void addCloseWordTest() {
         Word closeWord = new Word("testCloseWord");
         word.addCloseWord(closeWord);
-        ArrayList<Word> closeWordsList = word.getCloseWords();
+        List<Word> closeWordsList = word.getCloseWords();
 
         assertEquals(closeWord, closeWordsList.get(0));
     }

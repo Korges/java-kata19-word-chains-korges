@@ -3,11 +3,10 @@ package com.korges.krk.graph;
 import com.korges.krk.exception.WordNotInWordListException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
 import static org.junit.jupiter.api.Assertions.*;
+
 
 class WordGraphTest {
 

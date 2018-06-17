@@ -7,8 +7,9 @@ import com.korges.krk.graph.WordGraph;
 import com.korges.krk.program.body.ChainFinder;
 import org.junit.jupiter.api.Test;
 import java.util.LinkedList;
-
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
+
 
 public class SampleRunTest {
 
@@ -27,9 +28,10 @@ public class SampleRunTest {
         Word sourceTest = wordGraph.getWordByValue("dog");
         Word destinationTest = wordGraph.getWordByValue("cat");
 
-        LinkedList<Word> testList = wordGraph.breadthFirstSearch(sourceTest, destinationTest);
+        List<Word> testList = wordGraph.breadthFirstSearch(sourceTest, destinationTest);
 
         LinkedList<Word> expectedList = new LinkedList<>();
+
         expectedList.add(wordGraph.getWordByValue("dog"));
         expectedList.add(wordGraph.getWordByValue("dot"));
         expectedList.add(wordGraph.getWordByValue("dat"));
