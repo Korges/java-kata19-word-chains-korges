@@ -4,9 +4,8 @@ import com.korges.krk.exception.ConnectionNotFoundException;
 import com.korges.krk.exception.WordNotInWordListException;
 import com.korges.krk.graph.Word;
 import com.korges.krk.graph.WordGraph;
+import java.util.List;
 
-
-import java.util.LinkedList;
 
 public class ChainFinder {
 
@@ -30,7 +29,7 @@ public class ChainFinder {
 
     public void findShortestPath(Word[] endPoints) throws ConnectionNotFoundException {
 
-        LinkedList<Word> shortestPath = wordGraph.breadthFirstSearch(endPoints[0], endPoints[1]);
+        List<Word> shortestPath = wordGraph.breadthFirstSearch(endPoints[0], endPoints[1]);
 
         System.out.println(shortestPath);
     }

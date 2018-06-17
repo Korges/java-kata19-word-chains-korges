@@ -2,6 +2,7 @@ package com.korges.krk.helper;
 
 import java.util.Scanner;
 
+
 public class UI {
 
     Scanner scanner;
