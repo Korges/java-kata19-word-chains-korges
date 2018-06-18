@@ -26,7 +26,6 @@ class WordTest {
 
     @Test
     void getWordValueTest() {
-
         String expected = "testWord";
 
         assertEquals(expected, word.getWordValue());
@@ -34,9 +33,8 @@ class WordTest {
 
     @Test
     void toStringTest() {
-
         String expected = "testWord";
+
         assertEquals(expected, word.toString());
     }
-
 }

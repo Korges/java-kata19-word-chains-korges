@@ -13,6 +13,7 @@ class UserOptionTest {
     static void createUserOption() {
         userOption = UserOption.START;
     }
+
     @Test
     void recognizeUserOption() {
 

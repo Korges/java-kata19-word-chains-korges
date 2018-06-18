@@ -18,38 +18,30 @@ class WordGraphTest {
     }
 
     @Test
-    void getWordByValue1() {
+    void getWordByValue1() throws WordNotInWordListException {
         Word testWord = new Word("testWord");
         wordGraph.addWord(testWord);
 
-        try {
-            assertEquals(testWord, wordGraph.getWordByValue("testWord"));
-        } catch (WordNotInWordListException e) {
-            e.printStackTrace();
-        }
+        assertEquals(testWord, wordGraph.getWordByValue("testWord"));
     }
 
     @Test
     void getWordByValue2() {
-        assertThrows(WordNotInWordListException.class, ()->wordGraph.getWordByValue("wrongData"));
-
+        assertThrows(WordNotInWordListException.class, () -> wordGraph.getWordByValue("wrongData"));
     }
 
-
-
     @Test
-    void compareWordsTestifTrue() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void compareWordsIfOnlyOneLetterIsDifferentTest() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Method method = wordGraph.getClass().getDeclaredMethod("compareWords", String.class, String.class);
         method.setAccessible(true);
 
         boolean response = (boolean) method.invoke(wordGraph, "dog", "dod");
 
         assertTrue(response);
-
     }
 
     @Test
-    void compareWordsTestifFalse() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void compareWordsTestIfMoreLetterIsDifferentTest() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Method method = wordGraph.getClass().getDeclaredMethod("compareWords", String.class, String.class);
         method.setAccessible(true);
 
@@ -57,5 +49,4 @@ class WordGraphTest {
 
         assertFalse(response);
     }
-
 }

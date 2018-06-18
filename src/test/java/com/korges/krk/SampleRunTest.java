@@ -11,7 +11,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class SampleRunTest {
+class SampleRunTest {
 
     private static WordGraph wordGraph;
     private static ChainFinder chainFinder;
@@ -19,7 +19,6 @@ public class SampleRunTest {
 
     @Test
     void findShortestPathTestIfConnectionExist() throws WordNotInWordListException, ConnectionNotFoundException {
-
         sampleInputs = new String[]{"dog", "cat"};
         chainFinder = new ChainFinder(sampleInputs[0].length());
         chainFinder.buildConnectionsAndGetEndPoints(sampleInputs[0], sampleInputs[1]);
@@ -50,6 +49,5 @@ public class SampleRunTest {
         Word destinationTest = wordGraph.getWordByValue("benoni");
 
         assertThrows(ConnectionNotFoundException.class, () -> wordGraph.breadthFirstSearch(sourceTest, destinationTest));
-
     }
 }
