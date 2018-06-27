@@ -71,7 +71,7 @@ public class WordGraph {
         for (Word parent : wordList) {
             for (Word children : wordList) {
                 if (compareWords(parent.getWordValue(), children.getWordValue())) {
-                    if (!parent.getCloseWords().contains(children)) {
+                    if (!parent.getCloseWords().contains(children) && !parent.getWordValue().equals(children.getWordValue())) {
                         parent.addCloseWord(children);
                     }
                 }
